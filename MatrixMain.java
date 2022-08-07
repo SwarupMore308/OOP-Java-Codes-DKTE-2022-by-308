@@ -1,28 +1,29 @@
+import java.sql.RowId;
 import java.util.*;
 
 class Matrix{
 
     int[][] first_m = new  int[100][100];
     int[][] second_m = new  int[100][100];
-    int rw,cl;
+    int rows,columns;
 
     Matrix(){
         for(int i = 0;i<100;i++){
             for(int j = 0;j<100;j++){
                 first_m[i][j] = 0;
                 second_m[i][j] = 0;
-                rw = 0;
-                cl = 0;
+                rows = 0;
+                columns = 0;
 
             }
         }
     }
 
     Matrix(int[][] a,int[][] b, int row,int column){
-        rw = row;
-        cl = column;
-        for(int i = 0;i<rw;i++){
-            for(int j = 0;j<cl;j++){
+        rows = row;
+        columns = column;
+        for(int i = 0;i<rows;i++){
+            for(int j = 0;j<columns;j++){
                 first_m[i][j] = a[i][j];
                 second_m[i][j] = b[i][j];
             }
@@ -30,9 +31,9 @@ class Matrix{
     }
 
     int[][] addition(){
-        int[][] sum = new int[rw][cl];
-        for(int i = 0;i<rw;i++){
-            for(int j = 0; j<cl;j++){
+        int[][] sum = new int[rows][columns];
+        for(int i = 0;i<rows;i++){
+            for(int j = 0; j<columns;j++){
                 sum[i][j] = first_m[i][j] + second_m[i][j];
             }
         }
@@ -40,9 +41,9 @@ class Matrix{
     }
 
     int[][] subtraction(){
-        int[][] sub = new int[rw][cl];
-        for(int i = 0;i<rw;i++){
-            for(int j = 0; j<cl;j++){
+        int[][] sub = new int[rows][columns];
+        for(int i = 0;i<rows;i++){
+            for(int j = 0; j<columns;j++){
                 sub[i][j] = first_m[i][j] - second_m[i][j];
             }
         }
@@ -50,11 +51,11 @@ class Matrix{
     }
 
     int[][] multiplication(){
-        int[][] multi = new int[rw][cl];
-        for(int i=0;i<rw;i++){    
-            for(int j=0;j<cl;j++){    
+        int[][] multi = new int[rows][columns];
+        for(int i=0;i<rows;i++){    
+            for(int j=0;j<columns;j++){    
                 multi[i][j]=0;      
-                for(int k=0;k<rw;k++)      
+                for(int k=0;k<rows;k++)      
                 {      
                     multi[i][j]=first_m[i][k]*second_m[k][j]+multi[i][j];      
                 } 
@@ -64,9 +65,9 @@ class Matrix{
     }
 
     int[][] transposition(){
-        int[][] transp = new int[rw][cl];
-        for(int i = 0; i<rw; i++){
-            for(int j = 0;j<cl;j++){
+        int[][] transp = new int[rows][columns];
+        for(int i = 0; i<rows; i++){
+            for(int j = 0;j<columns;j++){
                transp[i][j] = first_m[j][i];
             }
         }
