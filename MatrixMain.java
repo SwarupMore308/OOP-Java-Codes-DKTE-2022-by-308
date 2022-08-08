@@ -2,6 +2,8 @@ import java.util.*;
 
 class Matrix{
 
+    /*This Class performs all the matrix operations */
+
     int[][] first_m = new  int[100][100];
     int[][] second_m = new  int[100][100];
     int rows,columns;
@@ -77,12 +79,33 @@ class Matrix{
 
 
 public class MatrixMain {
+
+    static void displayOutput(int[][] outputMatrix,int row,int column){
+        /*This Method displays the output */
+        for(int i = 0; i<row; i++){
+            System.out.print("|");
+            for(int j = 0;j<column;j++){
+                System.out.print(outputMatrix[i][j]);
+                System.out.print("|");
+            }
+            System.out.println("");
+       }
+    }
+
+
    public static void main(String[] args) {
+
+        /*This is the main method */
+
+
         Scanner sc = new Scanner(System.in);
+        
         System.out.println("Enter Row Count: ");
         int row = sc.nextInt();
+        
         System.out.println("Enter Column Count: ");
         int column = sc.nextInt();
+
         int[][] first_m = new  int[row][column];
         int[][] second_m = new  int[row][column];
 
@@ -92,55 +115,37 @@ public class MatrixMain {
                 first_m[r][c] = sc.nextInt();
             }
         }
+        
         System.out.println("Enter Matrix 2: ");
         for(int r = 0;r<row;r++){
             for(int c=0;c<column;c++){
                 second_m[r][c] = sc.nextInt();
             }
         }
+        
+        
         sc.close();
+        
         Matrix mObj = new Matrix(first_m,second_m,row,column);
 
+        /*Addition of matrix and output displayed */
         int[][] sum = mObj.addition();
         System.out.println("Matrix After Addition: ");
-        for(int i = 0; i<row; i++){
-            for(int j = 0;j<column;j++){
-                System.out.print(sum[i][j]);
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
-
+        displayOutput(sum,row,column);
+        
+        /*Subtraction of matrix and output displayed */
         int[][] sub = mObj.subtraction();
         System.out.println("Matrix After Subtraction: ");
-        for(int i = 0; i<row; i++){
-            for(int j = 0;j<column;j++){
-                System.out.print(sub[i][j]);
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
+        displayOutput(sub,row,column);
 
+        /*Multiplication of matrix and output displayed */
         int[][] multi = mObj.multiplication();
         System.out.println("Matrix After Multiplication: ");
-        for(int i = 0; i<row; i++){
-            System.out.print("|");
-            for(int j = 0;j<column;j++){
-                System.out.print(multi[i][j]);
-                System.out.print("|");
-            }
-            System.out.println("");
-        }
+        displayOutput(multi,row,column);
 
+        /*Transposition of matrix and output displayed */
         System.out.println("Matrix After Transposition: ");
         int[][] transp = mObj.transposition();
-        for(int i = 0; i<row; i++){
-            System.out.print("|");
-            for(int j = 0;j<column;j++){
-                System.out.print(transp[i][j]);
-                System.out.print("|");
-            }
-            System.out.println("");
-        }
-   }
+        displayOutput(transp,row,column);
+   } 
 }
