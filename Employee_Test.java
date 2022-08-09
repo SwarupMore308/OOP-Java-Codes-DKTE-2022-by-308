@@ -59,6 +59,27 @@ class Employee{
 class Employee_Test{
 
     /*This Class Consists of main method */
+
+    static void displayInfo(Employee e){
+        System.out.println("Full Name:- "+e.getFullName());
+        System.out.println("Monthly Salary: "+e.getMonthlySalary());
+        System.out.println("Yearly Salary:- "+e.getYearlySalary());
+    }
+
+    static double calculateYearlySalary(Employee e){
+        return (e.getMonthlySalary() * 12);
+    }
+
+    static double calculateIncrement(Employee e){
+        double ten_percentage = (e.getMonthlySalary()) * 0.10;
+        e.setMonthlySalary(e.getMonthlySalary()+ten_percentage);
+        double yearlysalary = (e.getMonthlySalary()*12);
+        return yearlysalary;
+    }
+
+
+    /*Main function */
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -79,6 +100,7 @@ class Employee_Test{
         employee_1.setFirstName(first_name);
         employee_1.setLastName(last_name);
         employee_1.setMonthlySalary(salary);
+        employee_1.setYearlySalary(calculateYearlySalary(employee_1));
 
         /*Taking Second Emplyee Details */
         System.out.println("-:Enter Second Employee Details:- ");
@@ -93,18 +115,18 @@ class Employee_Test{
         employee_2.setFirstName(first_name1);
         employee_2.setLastName(last_name1);
         employee_2.setMonthlySalary(salary1);
+        employee_2.setYearlySalary(calculateYearlySalary(employee_2));
 
         /*Display User Entered Data  */
+        System.out.println("-------------------------------");
         System.out.println("-:Details of Employees:-");
         System.out.println("Employee 1: ");
-        System.out.println("Full Name:- "+employee_1.getFullName());
-        System.out.println("Monthly Salary:- "+employee_1.getMonthlySalary());
+        displayInfo(employee_1);
 
 
         System.out.println("-------------------------------");
         System.out.println("Employee 1: ");
-        System.out.println("Full Name:- "+employee_2.getFullName());
-        System.out.println("Monthly Salary:- "+employee_2.getMonthlySalary());
+        displayInfo(employee_2);
 
         /*Display Data after Increment */
         System.out.println("-------------------------------");
@@ -112,28 +134,19 @@ class Employee_Test{
 
 
         /*Increment and set Monthly and Yearly Salarys of both the Employees */
-        double e1_ten_p = (employee_1.getMonthlySalary()) * 0.10;
-        employee_1.setMonthlySalary(employee_1.getMonthlySalary()+e1_ten_p);
-        double yearlysalary1 = (employee_1.getMonthlySalary()*12);
-        employee_1.setYearlySalary(yearlysalary1);
+        employee_1.setYearlySalary(calculateIncrement(employee_1));
 
-        
-        double e2_ten_p = (employee_2.getMonthlySalary()) * 0.10;
-        employee_2.setMonthlySalary(employee_2.getMonthlySalary()+e2_ten_p);
-        double yearlysalary2 = (employee_2.getMonthlySalary()*12);
-        employee_2.setYearlySalary(yearlysalary2);
+        employee_2.setYearlySalary(calculateIncrement(employee_2));
 
 
         /*Display Emplyee Data after Increment */
         System.out.println("Employee 1:- ");
-        System.out.println("Full Name:- "+employee_1.getFullName());
-        System.out.println("Monthly Salary: "+employee_1.getMonthlySalary());
-        System.out.println("Yearly Salary:- "+employee_1.getYearlySalary());
+        displayInfo(employee_1);
+        
 
         System.out.println("Employee 2:- ");
-        System.out.println("Full Name:- "+employee_2.getFullName());
-        System.out.println("Monthly Salary: "+employee_2.getMonthlySalary());
-        System.out.println("Yearly Salary:- "+employee_2.getYearlySalary());
+        displayInfo(employee_2);
 
+        sc.close();
     }
 }
