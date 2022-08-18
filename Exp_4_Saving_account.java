@@ -48,7 +48,7 @@ class Exp_4_Saving_account{
         SavingAccount saver2 = new SavingAccount(3000);
         Exp_4_Saving_account ex = new Exp_4_Saving_account();
 
-        System.out.println("---:Bank Details:---");
+        System.out.println("------:Bank Details:------");
         System.out.println("Account Balance: ");
         ex.displayBalance(saver1, saver2);
 
@@ -57,14 +57,14 @@ class Exp_4_Saving_account{
 
         ex.startCalculating(saver1,saver2);
 
-        System.out.println("---:After 4% Interest:---");
+        System.out.println("------:After 4% Interest:------");
         ex.displayBalance(saver1, saver2);
 
         SavingAccount.modifyInterestRate(5.0);
 
         ex.startCalculating(saver1, saver2);
 
-        System.out.println("---:After 5% Interest:---");
+        System.out.println("------:After 5% Interest:------");
         ex.displayBalance(saver1, saver2);
     }
 }
