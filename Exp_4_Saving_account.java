@@ -20,7 +20,7 @@ class SavingAccount{
         this.savingBalance = this.savingBalance + totalInterest;
     }
 
-    void modifyInterestRate(double annualInterestRate){
+    static void modifyInterestRate(double annualInterestRate){
         SavingAccount.annualInterestRate = annualInterestRate;
     }
 
@@ -60,8 +60,7 @@ class Exp_4_Saving_account{
         System.out.println("---:After 4% Interest:---");
         ex.displayBalance(server1, server2);
 
-        server1.modifyInterestRate(5.0);
-        server2.modifyInterestRate(5.0);
+        SavingAccount.modifyInterestRate(5.0);
 
         ex.startCalculating(server1, server2);
 
