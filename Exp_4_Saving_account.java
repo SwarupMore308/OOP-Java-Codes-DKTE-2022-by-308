@@ -33,38 +33,38 @@ class SavingAccount{
 
 class Exp_4_Saving_account{
 
-    void startCalculating(SavingAccount server1, SavingAccount server2){
-        server1.calculateMonthlySalary();
-        server2.calculateMonthlySalary();
+    void startCalculating(SavingAccount saver1, SavingAccount saver2){
+        saver1.calculateMonthlySalary();
+        saver2.calculateMonthlySalary();
     }
 
-    void displayBalance(SavingAccount server1,SavingAccount server2){
-        System.out.println("Server 1: "+server1.getSavingBalance());
-        System.out.println("Server 2: "+server2.getSavingBalance());
+    void displayBalance(SavingAccount saver1,SavingAccount saver2){
+        System.out.println("Server 1: "+saver1.getSavingBalance());
+        System.out.println("Server 2: "+saver2.getSavingBalance());
     }
 
     public static void main(String[] args) {
-        SavingAccount server1 = new SavingAccount(2000);
-        SavingAccount server2 = new SavingAccount(3000);
+        SavingAccount saver1 = new SavingAccount(2000);
+        SavingAccount saver2 = new SavingAccount(3000);
         Exp_4_Saving_account ex = new Exp_4_Saving_account();
 
         System.out.println("---:Bank Details:---");
         System.out.println("Account Balance: ");
-        ex.displayBalance(server1, server2);
+        ex.displayBalance(saver1, saver2);
 
-        server1.setAnnualInterestRate(4.0);
-        server2.setAnnualInterestRate(4.0);
+        saver1.setAnnualInterestRate(4.0);
+        saver2.setAnnualInterestRate(4.0);
 
-        ex.startCalculating(server1,server2);
+        ex.startCalculating(saver1,saver2);
 
         System.out.println("---:After 4% Interest:---");
-        ex.displayBalance(server1, server2);
+        ex.displayBalance(saver1, saver2);
 
         SavingAccount.modifyInterestRate(5.0);
 
-        ex.startCalculating(server1, server2);
+        ex.startCalculating(saver1, saver2);
 
         System.out.println("---:After 5% Interest:---");
-        ex.displayBalance(server1, server2);
+        ex.displayBalance(saver1, saver2);
     }
 }
