@@ -16,8 +16,14 @@ class SavingAccount{
     }
 
     void calculateMonthlySalary(){
-        double totalInterest = (this.savingBalance * SavingAccount.annualInterestRate) / 12; 
-        this.savingBalance = this.savingBalance + totalInterest;
+        //double totalInterest = (this.savingBalance * SavingAccount.annualInterestRate) / 12; 
+        //this.savingBalance = this.savingBalance + totalInterest;
+        //System.out.println(SavingAccount.annualInterestRate+" "+this.savingBalance);
+        double yearlyInterest = SavingAccount.annualInterestRate / 100;
+        double monthlyInterest = yearlyInterest/12;
+        double interestAmmount =   monthlyInterest * savingBalance;
+        //System.out.println(interestAmmount);
+        this.savingBalance = this.savingBalance + interestAmmount;
     }
 
     static void modifyInterestRate(double annualInterestRate){
@@ -39,8 +45,8 @@ class Exp_4_Saving_account{
     }
 
     void displayBalance(SavingAccount saver1,SavingAccount saver2){
-        System.out.println("Server 1: "+saver1.getSavingBalance());
-        System.out.println("Server 2: "+saver2.getSavingBalance());
+        System.out.println("Saver 1: "+saver1.getSavingBalance());
+        System.out.println("Sarver 2: "+saver2.getSavingBalance());
     }
 
     public static void main(String[] args) {
