@@ -19,9 +19,9 @@ class SavingAccount{
         //double totalInterest = (this.savingBalance * SavingAccount.annualInterestRate) / 12; 
         //this.savingBalance = this.savingBalance + totalInterest;
         //System.out.println(SavingAccount.annualInterestRate+" "+this.savingBalance);
-        double yearlyInterest = SavingAccount.annualInterestRate / 100;
-        double monthlyInterest = yearlyInterest/12;
-        double interestAmmount =   monthlyInterest * savingBalance;
+        //double yearlyInterest = SavingAccount.annualInterestRate / 100;
+        //double monthlyInterest = yearlyInterest/12;
+        double interestAmmount =   ((SavingAccount.annualInterestRate / 100)/12) * this.savingBalance;
         //System.out.println(interestAmmount);
         this.savingBalance = this.savingBalance + interestAmmount;
     }
