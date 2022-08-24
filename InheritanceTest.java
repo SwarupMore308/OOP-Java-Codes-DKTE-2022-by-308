@@ -177,6 +177,39 @@ public class InheritanceTest {
                 Student st = new Student(rollNo,m1,m2,m3,m4,m5,name,address,day,month,year,height,weight);
                 st.calculateAge();
                 st.calculateAvarage();
+                System.out.println("-----Student Data-----");
+                System.out.println("Name: "+st.name);
+                System.out.println("Age: "+st.age);
+                System.out.println("Avarage: "+st.avg);
+                break;
+            case 2:
+                System.out.println("----------Enter Following Data----------");
+                System.out.print("Name: ");
+                name = sc.next();
+                System.out.print("Date of Birth(dd mm yyyy):  ");
+                day = sc.nextInt();
+                month = sc.nextInt();
+                year = sc.nextInt();
+                System.out.print("Height(m): ");
+                height = sc.nextDouble();
+                System.out.print("Weight: ");
+                weight = sc.nextDouble();
+                System.out.print("Address: ");
+                address = sc.next();
+                System.out.println("Employee Id: ");
+                empId = sc.nextInt();
+                System.out.println("Salary: ");
+                salary = sc.nextDouble();
+
+                Employee employee = new Employee(empId,salary,name,address,day,month,year,height,weight);
+                employee.calculateAge();
+                employee.calculateTax();
+                System.out.println("-----Employee Data-----");
+                System.out.println("Name: "+employee.name);
+                System.out.println("Age: "+employee.age);
+                System.out.println("Salary: "+employee.salary);
+                System.out.println("Tax: "+employee.tax);
+                break;
         }
     }
 }
