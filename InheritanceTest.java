@@ -29,6 +29,62 @@ class Person{
         this.address = address;
     }
 
+    void setName(String name){
+        this.name = name;
+    }
+     
+    void setAddress(String address){
+        this.address = address;
+    }
+
+    void setDay(int day){
+        this.day = day;
+    }
+
+    void setMonth(int month){
+        this.month = month;
+    }
+
+    void setYear(int year){
+        this.year = year;
+    }
+
+    void setHeight(double height){
+        this.height = height;
+    }
+
+    void setWeight(double weight){
+        this.weight = weight;
+    }
+
+    String getName(){
+        return name;
+    }
+
+    String getAddress(){
+        return address;
+    }
+
+    int getDay(){
+        return day;
+    }
+
+    int getMonth(){
+        return month;
+    }
+
+    int getYear(){
+        return year;
+    }
+
+    double getHeight(){
+        return height;
+    }
+
+    double getWeight(){
+        return weight;
+    }
+
     void calculateAge(){
         LocalDate ld =  LocalDate.now();
         this.age = ld.getYear() - year;
@@ -58,6 +114,11 @@ class Student extends Person{
         this.m4=m4;
         this.m5=m5;
     }
+
+    void setRollNo(int rollNo){
+        this.rollNo = rollNo;
+    }
+    void 
 
     void calculateAvarage(){
         this.avg = (m1+m2+m3+m4+m5)/5;
@@ -94,7 +155,7 @@ class Employee extends Person{
                 tax = 25000 + salary * 0.20;
             }
             else{
-                tax = 112500 + salary * 30;
+                tax = 112500 + salary * 0.30;
             }
         }
         
@@ -109,7 +170,7 @@ class Employee extends Person{
                 tax = 10000 + salary * 0.20;
             }
             else{
-                tax = 110000 + salary * 30;
+                tax = 110000 + salary * 0.30;
             }
         }
 
@@ -121,7 +182,7 @@ class Employee extends Person{
                 tax = salary * 0.20;
             }
             else{
-                tax = 100000 + salary * 30;
+                tax = 100000 + salary * 0.30;
             }
         }
     }
@@ -136,9 +197,9 @@ public class InheritanceTest {
         double height,weight;
         String address;
         int rollNo;
-        double m1,m2,m3,m4,m5,avg;
+        double m1,m2,m3,m4,m5;
         int empId;
-        double salary,tax;
+        double salary;
 
         Scanner sc = new Scanner(System.in);
 

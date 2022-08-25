@@ -50,8 +50,8 @@ class Exp_4_Saving_account{
     }
 
     public static void main(String[] args) {
-        SavingAccount saver1 = new SavingAccount(2000);
-        SavingAccount saver2 = new SavingAccount(3000);
+        SavingAccount saver1 = new SavingAccount(1000);
+        SavingAccount saver2 = new SavingAccount(2000);
         Exp_4_Saving_account ex = new Exp_4_Saving_account();
 
         System.out.println("------:Bank Details:------");
