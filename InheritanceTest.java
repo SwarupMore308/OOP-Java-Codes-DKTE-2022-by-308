@@ -85,6 +85,13 @@ class Person{
         return weight;
     }
 
+    int getAge(){
+        return age;
+    }
+    String getDOB(){
+        return (day+"/"+month+"/"+year);
+    }
+
     void calculateAge(){
         LocalDate ld =  LocalDate.now();
         this.age = ld.getYear() - year;
@@ -118,7 +125,41 @@ class Student extends Person{
     void setRollNo(int rollNo){
         this.rollNo = rollNo;
     }
-    void 
+
+    void setMarks(double m1,double m2,double m3,double m4,double m5){
+        this.m1=m1;
+        this.m2=m2;
+        this.m3=m3;
+        this.m4=m4;
+        this.m5=m5;
+    }
+
+    void setAvarage(double avg){
+        this.avg = avg;
+    }
+
+    int getRollNo(){
+        return rollNo;
+    }
+
+    double getM1(){
+        return m1;
+    }
+    double getM2(){
+        return m2;
+    }
+    double getM3(){
+        return m3;
+    }
+    double getM4(){
+        return m4;
+    }
+    double getM5(){
+        return m5;
+    }
+    double getAvarage(){
+        return avg;
+    }
 
     void calculateAvarage(){
         this.avg = (m1+m2+m3+m4+m5)/5;
@@ -191,50 +232,72 @@ class Employee extends Person{
 
 
 public class InheritanceTest {
-    public static void main(String[] args) {
-        String name;
-        int day, month, year;
-        double height,weight;
-        String address;
-        int rollNo;
-        double m1,m2,m3,m4,m5;
-        int empId;
-        double salary;
+    static String name;
+    static int day, month, year;
+    static double height,weight;
+    static String address;
 
-        Scanner sc = new Scanner(System.in);
+    static int rollNo;
+    static double m1,m2,m3,m4,m5;
+    static int empId;
+    static double salary;
+
+
+    static Scanner sc = new Scanner(System.in);
+
+    static void inputPersonInfo(){
+        System.out.println("----------Enter Following Data----------");
+        System.out.print("Name: ");
+        name = sc.next();
+        System.out.print("Date of Birth(dd mm yyyy):  ");
+        day = sc.nextInt();
+        month = sc.nextInt();
+        year = sc.nextInt();
+        System.out.print("Height(m): ");
+        height = sc.nextDouble();
+        System.out.print("Weight: ");
+        weight = sc.nextDouble();
+        System.out.print("Address: ");
+        address = sc.next();
+    }
+
+    static void inputStudentInfo(){
+
+        System.out.print("Roll No: ");
+        rollNo = sc.nextInt();
+        System.out.println("Marks(5 Subjects): ");
+        System.out.print("Sub1: ");
+        m1 = sc.nextDouble();
+        System.out.print("Sub2: ");
+        m2 = sc.nextDouble();
+        System.out.print("Sub3: ");
+        m3 = sc.nextDouble();
+        System.out.print("Sub4: ");
+        m4 = sc.nextDouble();
+        System.out.print("Sub5: ");
+        m5 = sc.nextDouble();
+    }
+
+
+    static void inputEmployeeInfo(){
+        System.out.println("Employee Id: ");
+        empId = sc.nextInt();
+        System.out.println("Salary: ");
+        salary = sc.nextDouble();
+    }
+    public static void main(String[] args) {
+        
+       
+
+        //Scanner sc = new Scanner(System.in);
 
         System.out.println("Select One: ");
         System.out.println("1.Student \n2.Employee");
         int choice = sc.nextInt();
         switch(choice){
             case 1:
-                System.out.println("----------Enter Following Data----------");
-                System.out.print("Name: ");
-                name = sc.next();
-                System.out.print("Date of Birth(dd mm yyyy):  ");
-                day = sc.nextInt();
-                month = sc.nextInt();
-                year = sc.nextInt();
-                System.out.print("Height(m): ");
-                height = sc.nextDouble();
-                System.out.print("Weight: ");
-                weight = sc.nextDouble();
-                System.out.print("Address: ");
-                address = sc.next();
-                System.out.print("Roll No: ");
-                rollNo = sc.nextInt();
-                System.out.println("Marks(5 Subjects): ");
-                System.out.print("Sub1: ");
-                m1 = sc.nextDouble();
-                System.out.print("Sub2: ");
-                m2 = sc.nextDouble();
-                System.out.print("Sub3: ");
-                m3 = sc.nextDouble();
-                System.out.print("Sub4: ");
-                m4 = sc.nextDouble();
-                System.out.print("Sub5: ");
-                m5 = sc.nextDouble();
-
+                inputPersonInfo();
+                inputStudentInfo();
                 Student st = new Student(rollNo,m1,m2,m3,m4,m5,name,address,day,month,year,height,weight);
                 st.calculateAge();
                 st.calculateAvarage();
@@ -244,24 +307,8 @@ public class InheritanceTest {
                 System.out.println("Avarage: "+st.avg);
                 break;
             case 2:
-                System.out.println("----------Enter Following Data----------");
-                System.out.print("Name: ");
-                name = sc.next();
-                System.out.print("Date of Birth(dd mm yyyy):  ");
-                day = sc.nextInt();
-                month = sc.nextInt();
-                year = sc.nextInt();
-                System.out.print("Height(m): ");
-                height = sc.nextDouble();
-                System.out.print("Weight: ");
-                weight = sc.nextDouble();
-                System.out.print("Address: ");
-                address = sc.next();
-                System.out.println("Employee Id: ");
-                empId = sc.nextInt();
-                System.out.println("Salary: ");
-                salary = sc.nextDouble();
-
+                inputPersonInfo();
+                inputEmployeeInfo();
                 Employee employee = new Employee(empId,salary,name,address,day,month,year,height,weight);
                 employee.calculateAge();
                 employee.calculateTax();
