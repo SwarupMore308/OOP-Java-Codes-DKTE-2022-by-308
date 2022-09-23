@@ -44,38 +44,40 @@ class StackQueue implements StackInterface{
     public void push(int element){
         if(top>=maxStack-1){
             System.out.println("Stack is full, Can not push element");
+            return;
         }
-        else{
-            top++;
-            stack[top] = element;
-            System.out.println("Element "+element+" pushed into the stack");
-        }
+        top++;
+        stack[top] = element;
+        System.out.println("Element "+element+" pushed into the stack");
     }
 
     public void pop(){
         if(top<0){
             System.out.println("Stack is empty, can not pop the element");
+            return;
         }
-        else{
-            int element = stack[top];
-            top--;
-            System.out.println("Element "+element+" popped from the stack");
-        }
+        
+        int element = stack[top];
+        top--;
+        System.out.println("Element "+element+" popped from the stack");
     }
+
     public void peek(){
         if(top==-1){
             System.out.println("There is no elements in stack");
+            return;
         }
-        else{
-            System.out.println("Element at top is: "+stack[top]);
-        }
+        
+        System.out.println("Element at top is: "+stack[top]);
+        
     }
 
     public void enqueue(int element){   
         if(rear==maxQueue-1){
             System.out.println("Queue is full, cannot insert the element");
+            return;
         }
-        else{
+        
             if(front == -1 && rear == -1){
                 front++;
                 rear++;
@@ -86,14 +88,15 @@ class StackQueue implements StackInterface{
             rear++;
             queue[rear]=element;
             System.out.println("Element "+element+" is inserted in queue");
-        }
+        
     }
 
     public void dequeue(){
         if(rear == -1 && front ==-1){
             System.out.println("Queue is empty, Cannot delete element.");
+            return;
         }
-        else{
+        
             int element;
             if(front==rear){
                 element = queue[front];
@@ -105,18 +108,19 @@ class StackQueue implements StackInterface{
             element = queue[front];
             front++;
             System.out.println("Element "+element+" is removed from queue");
-        }
+        
     }
 
     public void display(){
         if(front==-1 && rear==-1){
             System.out.println("Queue is empty, No elements to display");
+            return;
         }
-        else{
+       
             for(int i=front;i<=rear;i++){
                 System.out.println(" "+queue[i]);
             }
-        }
+        
     }
 
 }
