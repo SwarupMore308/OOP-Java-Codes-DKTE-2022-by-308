@@ -96,6 +96,10 @@ class Person{
         LocalDate ld =  LocalDate.now();
         this.age = ld.getYear() - year;
     }
+
+    /*static void display(){
+        System.out.println("This is base class method");
+    }*/
 }
 
 
@@ -164,6 +168,9 @@ class Student extends Person{
     void calculateAvarage(){
         this.avg = (m1+m2+m3+m4+m5)/5;
     }
+    static void display(){
+        System.out.println("This is base class method");
+    }
 }
 
 
@@ -227,6 +234,9 @@ class Employee extends Person{
             }
         }
     }
+    static void display(){
+        System.out.println("This is base class method");
+    }
 }
 
 
@@ -287,7 +297,8 @@ public class InheritanceTest {
     }
     public static void main(String[] args) {
         
-       
+       Employee e1 = new Employee();
+       Employee.display();
 
         //Scanner sc = new Scanner(System.in);
 
