@@ -13,10 +13,7 @@ interface QueueInterface{
     void enqueue(int element);
     void dequeue();
     void display();
-
-
 }
-
 
 class StackQueue implements StackInterface{
     private static int top =-1;
