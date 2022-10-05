@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 package MyMath;
 
+=======
+>>>>>>> d408a206c6066c970f1752d13455e6d3cb8607fa
 import MyMath.*;
 
 public class PackDemo {
     public static void main(String[] args) {
         Trig t = new Trig(45);
         t.calculateSine();
+<<<<<<< HEAD
         t.calculateCos();
         t.calculateTan();
         t.calculateSec();
@@ -31,5 +35,13 @@ public class PackDemo {
         stat.calculateSum();
 
         System.out.println("Minimum: "+stat.getMin()+"\nMaximum: "+stat.getMax()+"\nCount: "+stat.getCount()+"\nSum: "+stat.getSum()+"\nAvarage: "+stat.getAvarage());
+=======
+        t.calculateCosecant();
+        t.calculateCosine();
+        t.calculateCotangent();
+        t.calculateSecant();
+        t.calculateTangent();
+        System.out.println("Sine: "+t.getSine()+"Cos: "+t.getCosine());
+>>>>>>> d408a206c6066c970f1752d13455e6d3cb8607fa
     }
 }

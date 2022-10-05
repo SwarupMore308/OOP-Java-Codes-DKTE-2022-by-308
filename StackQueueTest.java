@@ -1,12 +1,9 @@
 import java.util.Scanner;
 
-
-
 interface StackInterface{
     void push(int element);
     void pop();
     void peek();
-
 }
 
 interface QueueInterface{
@@ -115,13 +112,12 @@ class StackQueue implements StackInterface{
         }
        
             for(int i=front;i<=rear;i++){
-                System.out.println(" "+queue[i]);
+                System.out.print(" "+queue[i]);
             }
         
     }
 
 }
-
 
 class StackQueueTest {
     public static void main(String[] args) {
