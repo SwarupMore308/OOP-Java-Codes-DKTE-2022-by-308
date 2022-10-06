@@ -2,7 +2,7 @@
 
 
 class A{
-    static final double pie = 3.1415926535897932384626433832795;
+    static final double pie = 3.142;
     double r;
     int area;
 
@@ -51,10 +51,7 @@ class B extends A{
 
     void calculateVol(){
         calculateAreaOfCircle();
-        
-        vol = 4/3 * pie * r * r * h;
-        
-        
+        vol = (4/3) * area * h;     
     }
     
     double getVol(){
@@ -83,9 +80,7 @@ class C extends A{
 
     void calculateVolCone(){
         super.calculateAreaOfCircle();
-        volC = (0.3) * pie * r * r * l;
-       
-
+        this.volC = (1/3) * area * l;
     }
 
     double getVolC(){
@@ -107,9 +102,6 @@ public class Test {
 
         System.out.println(c_object.getArea());
         System.out.println(c_object.getVolC());
-
-
-        
     }
     
 }

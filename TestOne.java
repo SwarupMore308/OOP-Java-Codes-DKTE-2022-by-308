@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthScrollBarUI;
+
 
 class StudentInfo{
-    static private int studentId=0;
+    private int studentId=0;
     private String studentName;
 
     StudentInfo(){
-        StudentInfo.studentId = StudentInfo.studentId+1;
+        this.studentId = 0;
         studentName = "";
     }
     StudentInfo(int studentId, String studentName){
@@ -133,9 +133,12 @@ public class TestOne {
     public static void main(String[] args) {
         StudentResult sr[] = new StudentResult[5];
         Scanner sc = new Scanner(System.in);
+        int count = 0;
 
         for(int i = 0; i<5;i++){
-            //sr[i] = new StudentResult;
+            sr[i] = new StudentResult();
+            count++;
+            sr[i].setStudentId(count);
             System.out.print("Student Name: ");
             String name = sc.next();
             System.out.println("Enter The Following Marks");
@@ -149,8 +152,9 @@ public class TestOne {
             sr[i].setMarks(marks1,marks2,marks3);
             sr[i].calculateTotalMarks();
         }
-        
         int topIndex = TestOne.findTopper(sr);
         StudentResult.display(sr[topIndex]);
+        sc.close();
+        
     }
 }
